@@ -1,0 +1,16 @@
+car
+cmc
+hypothyroid
+kr.vs.kp
+letter
+mushroom
+nursery
+optdigits
+page.blocks
+pendigits
+segment
+sick
+solar.flare2
+spambase
+splice
+waveform5000
