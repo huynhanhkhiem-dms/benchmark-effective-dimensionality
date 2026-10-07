@@ -1,0 +1,9 @@
+a,b,instance_overlap,schema_jaccard,prov_jaccard
+anneal,anneal.orig,1.0,1.0,0.0
+bridges.version1,bridges.version2,0.0,1.0,1.0
+column2C,column3C,1.0,1.0,0.0
+heart.c,heart.h,0.0,0.8571,1.0
+hypothyroid,sick,1.0,1.0,1.0
+solar.flare1,solar.flare2,0.1519,1.0,1.0
+spect.test,spect.train,0.1129,1.0,1.0
+spectf.test,spectf.train,1.0,1.0,1.0
