@@ -1,0 +1,22 @@
+{
+  "observed_from_public_analysis_ready_matrices": {
+    "uci_classification_pr": 6.047247434393023,
+    "uci_regression_pr": 4.46806426493912,
+    "openml_cc18_pr_quantized": 5.081649276910454,
+    "cc18_k36_vs_k84_matrix_correlation": 0.8482232770385797,
+    "cc18_K_star_tau_0.90_q_0.10": 48,
+    "cc18_family_centroid_pr": 5.008587719716551,
+    "cc18_leave_one_family_out_min": 4.421236087250903,
+    "cc18_leave_one_family_out_max": 5.394111800780288,
+    "cc18_split_half_median_spearman_brown": 0.8802101432508933
+  },
+  "verification_against_full_saved_output_rerun": {
+    "uci_classification_pr": true,
+    "uci_regression_pr": true,
+    "openml_cc18_pr": true,
+    "cc18_K_star": true,
+    "cc18_family_centroid_pr": true,
+    "cc18_lofo_range": true
+  },
+  "all_checks_pass": true
+}
