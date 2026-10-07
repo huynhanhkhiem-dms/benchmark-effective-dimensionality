@@ -1,0 +1,60 @@
+{
+  "uci_classification": {
+    "shape": [64,36],
+    "participation_ratio": 6.0472474343930225,
+    "permutation": {"mean":22.87238125799,"q025":21.9410113256,"q975":23.811525723865003,"n":5000,"monte_carlo_p_lower":0.0001999600079984003},
+    "analytical_null_NK_over_NplusK": 23.04,
+    "loo_r2": {"1":0.18581165576244596,"3":0.4406759843205843,"6":0.6448569040700041,"12":0.8454137026165593}
+  },
+  "uci_regression": {
+    "shape": [53,34],
+    "participation_ratio": 4.46806426493912,
+    "permutation": {"mean":20.58041278646852,"q025":19.61858574646,"q975":21.49386898204,"n":5000,"monte_carlo_p_lower":0.0001999600079984003},
+    "analytical_null_NK_over_NplusK": 20.71264367816092,
+    "loo_r2": {"1":0.3855945127588142,"3":0.625236899185564,"6":0.7981611200209371,"12":0.9202196780187043}
+  },
+  "openml_cc18": {
+    "shape": [72,84],
+    "participation_ratio": 5.081646934832975,
+    "permutation": {"mean":38.80663155932192,"q025":37.839570364414996,"q975":39.7774917492875,"n":5000,"monte_carlo_p_lower":0.0001999600079984003},
+    "analytical_null_NK_over_NplusK": 38.76923076923077,
+    "loo_r2": {
+      "1":{"observed":0.22296503950720226,"null_mean":0.011572001830024275,"null_q025":0.002677954365949523,"null_q975":0.020596793338958898,"monte_carlo_p_upper":0.0033222591362126247},
+      "3":{"observed":0.4720079385860481,"null_mean":0.03624838926107189,"null_q025":0.021634123043403578,"null_q975":0.04920277359853272,"monte_carlo_p_upper":0.0033222591362126247},
+      "6":{"observed":0.643189167093127,"null_mean":0.07193523933508716,"null_q025":0.053057641104408526,"null_q975":0.08920166100036268,"monte_carlo_p_upper":0.0033222591362126247},
+      "12":{"observed":0.8170760990212876,"null_mean":0.14613355353472576,"null_q025":0.12187969689409482,"null_q975":0.16833732994775857,"monte_carlo_p_upper":0.0033222591362126247}
+    }
+  },
+  "uci_classification_cap2000":{"affected_datasets":16,"participation_ratio":6.2773484364511},
+  "openml_cc18_portfolio_identification":{
+    "original_K36_vs_K84_matrix_correlation":0.8482227857209271,
+    "stability_curve":{
+      "12":{"median":0.7868183509496925,"q10":0.7142164792057413,"q90":0.8201580919703624},
+      "24":{"median":0.8908284371819359,"q10":0.8336259802821644,"q90":0.9092340584881234},
+      "36":{"median":0.924648219919264,"q10":0.8866086434204212,"q90":0.9479004597715786},
+      "48":{"median":0.9591099339979302,"q10":0.9380404878999994,"q90":0.9770592468078774},
+      "60":{"median":0.9776016750470136,"q10":0.9653398369520572,"q90":0.9886290024167678},
+      "72":{"median":0.9930256261642032,"q10":0.9798154696389328,"q90":0.9965400197722126},
+      "84":{"median":0.9999999999999998,"q10":0.9999999999999998,"q90":1.0}
+    },
+    "K_star_tau_0.90_q_0.10":48,
+    "split_half":{"median_matrix_correlation":0.7860494022848519,"median_spearman_brown":0.8802101432508933,"q025_spearman_brown":0.8123156735845252,"q975_spearman_brown":0.9155405847605944},
+    "family_centroid":{"participation_ratio":5.008586114054983,"permutation_mean":9.664796599176302,"permutation_q025":9.222010308547956,"permutation_q975":10.040576257056456,"monte_carlo_p_lower":0.0001999600079984003,"seed":2026,"replicates":5000},
+    "leave_one_family_out":{"adaboost":4.806413300489688,"cart":5.008146360762953,"extra_trees":5.137952353873746,"hist_gradient_boosting":5.394109308083545,"knn":4.837149801466208,"lda":4.8032774705172105,"linear_svm":4.907514309008657,"logistic_regression":5.260312557586956,"mlp":5.36984497265967,"naive_bayes":4.421234047733689,"random_forest":5.126289415468914,"rbf_svm":5.024333311258041},
+    "leave_one_family_out_min":4.421234047733689,
+    "leave_one_family_out_max":5.394109308083545
+  },
+  "metric_sensitivity":{
+    "uci_classification":{"acc":5.283263081880535,"bacc":6.0472474343930225,"f1m":5.42583450718011},
+    "uci_regression":{"r2c":4.46806426493912,"nrmse":4.533296167083658},
+    "openml_cc18":{"acc":4.991003569911969,"bacc":5.081646934832975,"f1m":4.50873605755648}
+  },
+  "uci_classification_provenance_response_audit":{
+    "linked_mean_rho":0.6555428838513696,
+    "other_mean_rho":0.2661573781587178,
+    "rho_gt_0.6":{"strong_pairs":234,"linked_pairs":5,"unlinked_share":0.9786324786324786},
+    "rho_gt_0.7":{"strong_pairs":105,"linked_pairs":4,"unlinked_share":0.9619047619047619},
+    "rho_gt_0.8":{"strong_pairs":32,"linked_pairs":4,"unlinked_share":0.875},
+    "rho_gt_0.9":{"strong_pairs":6,"linked_pairs":2,"unlinked_share":0.6666666666666667}
+  }
+}
