@@ -1,0 +1,23 @@
+{
+  "study": "Seven Effective Dimensions - expanded-portfolio analysis portfolio stability",
+  "suite": "OpenML-CC18 verified 72-task cache",
+  "target_K": 84,
+  "portfolio_design": "12 algorithm families x 7 pre-specified configurations",
+  "reused_layer2_configs": 36,
+  "new_layer3_configs": 48,
+  "new_fit_rows": 34560,
+  "combined_fit_rows": 60480,
+  "primary_metric": "balanced_accuracy",
+  "secondary_metrics": [
+    "accuracy",
+    "macro_f1"
+  ],
+  "min_class": 12,
+  "min_n": 50,
+  "subsample_cap": 1000,
+  "subsample_seed": 20240101,
+  "folds": 5,
+  "repeats": 2,
+  "analysis_seed": 20260817,
+  "purpose": "Test portfolio dependence/reliability after expanding from K=36 to a family-balanced K=84, while reusing exact K=36 results."
+}
