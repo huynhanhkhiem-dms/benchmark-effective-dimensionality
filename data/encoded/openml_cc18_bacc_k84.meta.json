@@ -1,0 +1,13 @@
+{
+  "file": "openml_cc18_bacc_k84",
+  "shape": [72, 84],
+  "scale": 1000000,
+  "dtype": "<u4",
+  "encoding": "gzip(base64(uint32 row-major array))",
+  "parts": [
+    "openml_cc18_bacc_k84.part01.b64",
+    "openml_cc18_bacc_k84.part02.b64",
+    "openml_cc18_bacc_k84.part03.b64"
+  ],
+  "note": "Balanced-accuracy task-by-configuration matrix quantized to 1e-6 from the saved analysis-ready output. Exact manuscript values from the full saved-output rerun are retained in verified_reported_results.json."
+}
