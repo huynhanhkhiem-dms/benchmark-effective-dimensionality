@@ -1,0 +1,21 @@
+{
+  "source": "Results from public CC18 72x84 quantized balanced-accuracy matrix; exploratory within-repertoire analyses reported 2026-10-08",
+  "full_pr": 5.081649276910454,
+  "family": {
+    "n": 462,
+    "disjoint_geometry_median": 0.45989,
+    "top5_disjoint_median": 0.31944,
+    "top5_reference_median": 0.58611,
+    "transfer_median": 0.80509,
+    "random_median": 0.78111
+  },
+  "config": {
+    "n": 300,
+    "disjoint_geometry_median": 0.77473,
+    "top5_disjoint_median": 0.54028,
+    "top5_reference_median": 0.72778,
+    "transfer_median": 0.81694,
+    "random_median": 0.77477
+  },
+  "methodological_limits": "Partition quantiles are descriptive; no new model training, no unseen-algorithm family evaluation and no ranking preservation."
+}
