@@ -31,7 +31,7 @@ def order(d,mode,seed):
 def conditional_bound(t,d,s,cand):
     g=t[s,:]-t[s,cand][:,None]
     upper=np.minimum(1.,np.min(g[:,None,:]+2*d[s,:,None],axis=0))
-    return float(max(0,np.max(upper.mean(axis=0))))
+    return float(max(0,np.max(np.delete(upper.mean(axis=0),cand))))
 
 def experiment():
     x,groups=load(ROOT)
@@ -68,7 +68,7 @@ def experiment():
                 actual=float(target.mean(axis=0).max()-target[:,cand].mean())
                 cb=conditional_bound(target,d,s,cand)
                 g=target[s,:]-target[s,cand][:,None]
-                ub=float(max(0,np.max((g.sum(axis=0)+len(x)-k)/len(x))))
+                ub=float(max(0,np.max(np.delete((g.sum(axis=0)+len(x)-k)/len(x),cand))))
                 a=arms[mode][str(k)]
                 a['cond'].append(cb);a['uncond'].append(ub);a['regret'].append(actual)
                 a['cert'].append(cb<=.01)
