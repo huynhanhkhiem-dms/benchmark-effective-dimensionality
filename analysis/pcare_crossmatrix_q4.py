@@ -47,13 +47,9 @@ def eval_one(x,source,target,k,seed,arm):
     # Is every target gap 2-Lipschitz under the source pseudometric?
     # Exhaustive directed pairwise gaps evaluated for all target configurations.
     # The sufficient column condition is not conflated with this weaker pairwise condition.
-    gapfail=False
-    for a in range(m):
-        for b in range(a+1,m):
-            vals=y[:,b]-y[:,a]
-            if (np.abs(vals[:,None]-vals[None,:])>2*ds+1e-10).any():
-                gapfail=True;break
-        if gapfail:break
+    diffs=y.T[:,:,None]-y.T[:,None,:]
+    span=diffs.max(axis=0)-diffs.min(axis=0)
+    gapfail=bool(np.any(span>2*ds+1e-10))
     s=selection(ds,k,seed,arm)
     avg=y.mean(axis=0);candidate=int(np.argmax(y[s].mean(axis=0)))
     regret=float(np.max(avg)-avg[candidate])
