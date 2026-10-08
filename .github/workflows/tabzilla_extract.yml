@@ -1,0 +1,36 @@
+name: TabZilla source integrity probe
+on:
+  push:
+    branches:
+      - 'research/rank-transfer-audit-*'
+    paths:
+      - 'analysis/tabzilla_extract.py'
+      - '.github/workflows/tabzilla_extract.yml'
+  workflow_dispatch:
+jobs:
+  verify-extract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install numpy pandas
+      - run: python analysis/tabzilla_extract.py
+      - name: Record integrity findings on research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/tabzilla_extraction_diagnostics.json
+          test ! -f data/tabzilla_independent_published_accuracy.csv || git add data/tabzilla_independent_published_accuracy.csv
+          git commit -m "Record independently sourced TabZilla extraction and limits" || exit 0
+          git push
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tabzilla-extraction-report
+          path: |
+            results/tabzilla_extraction_diagnostics.json
+            data/tabzilla_independent_published_accuracy.csv
