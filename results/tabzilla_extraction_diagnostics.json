@@ -1,0 +1,24 @@
+{
+  "source": "https://raw.githubusercontent.com/naszilla/tabzilla/main/results_viz/tabzilla-browser.html",
+  "status": "EXTRACTION_BLOCKED",
+  "page_size": 5383604,
+  "head_excerpt": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <title>TabZilla Results Browser</title>\n    <style>\n      html, body {\n        box-sizing: border-box;\n        display: flow-root;\n        height: 100%;\n        margin: 0;\n     ",
+  "term_positions": {
+    "const docs_json =": 5382402,
+    "'ColumnDataSource'": -1,
+    "\"ColumnDataSource\"": 3006,
+    "alg_name": 38496,
+    "Accuracy__test_mean": 350772,
+    "Bokeh.embed.embed_items": 5382650
+  },
+  "doc_keys": [
+    "docid",
+    "roots",
+    "root_ids"
+  ],
+  "doc_type": "dict",
+  "doc_json_chars": 126,
+  "candidate_count": 0,
+  "candidate_sizes": [],
+  "error": "No published Bokeh score table found"
+}
