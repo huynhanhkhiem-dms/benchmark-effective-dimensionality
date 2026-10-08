@@ -5,6 +5,8 @@
   "assumption_valid_fraction": 0.0,
   "max_assumption_excess": 0.728213,
   "median_assumption_excess": 0.6033315,
+  "sampled_pair_gap_2L_violation_fraction": 1.0,
+  "sampled_pair_check": "16 prespecified target pairs (configurations 1..16 versus 0); a positive value falsifies the weaker gap 2-Lipschitz requirement",
   "results": {
     "random": {
       "6": {
