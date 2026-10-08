@@ -44,13 +44,22 @@ def experiment():
         splits.extend([(a,b),(b,a)])
     arms={mode:{str(k):{'cond':[],'uncond':[],'regret':[],'cert':[],'cert_verified':[],'false_cert':[]}
           for k in KS} for mode in ('random','minimax','mean_cover')}
-    assumptions=[];excesses=[]
+    assumptions=[];excesses=[];gap_2l_fail=[]
     for idx,(src,dest) in enumerate(splits):
         target=x[:,dest]
         d=dist(x[:,src].T)
         excess=np.maximum(0,dist(target.T)-d)
         valid=bool(excess.max()<=1e-12)
         assumptions.append(valid);excesses.append(float(excess.max()))
+        # Weaker sufficient condition for pairwise regret envelopes: every gap is 2-Lipschitz.
+        # A violation in the first 16 fixed target-pairs disproves this condition.
+        bad=False
+        for b in range(min(16,target.shape[1]-1)):
+            g=target[:,b+1]-target[:,0]
+            if np.max(np.abs(g[:,None]-g[None,:])-2*d)>1e-12:
+                bad=True
+                break
+        gap_2l_fail.append(bad)
         for mode in arms:
             selected_order=order(d,mode,SEED+idx*127+len(mode))
             for k in KS:
@@ -72,6 +81,8 @@ def experiment():
        'assumption_valid_fraction':float(np.mean(assumptions)),
        'max_assumption_excess':float(max(excesses)),
        'median_assumption_excess':float(np.median(excesses)),
+       'sampled_pair_gap_2L_violation_fraction':float(np.mean(gap_2l_fail)),
+       'sampled_pair_check':'16 prespecified target pairs (configurations 1..16 versus 0); a positive value falsifies the weaker gap 2-Lipschitz requirement',
        'results':{},'novelty_status':'Classical conditional extension; not a new theorem'}
     for name,aa in arms.items():
         report['results'][name]={}
