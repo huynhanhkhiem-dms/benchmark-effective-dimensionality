@@ -15,12 +15,15 @@ try:
     report["page_size"]=len(page)
     report["head_excerpt"]=page[:250]
     report["term_positions"]={p:page.find(p) for p in ["const docs_json =","'ColumnDataSource'","\"ColumnDataSource\"","alg_name","Accuracy__test_mean","Bokeh.embed.embed_items"]}
-    a=page.find("const docs_json =")
-    if a < 0: raise ValueError("Bokeh docs_json assignment not located")
-    start=page.find("{",a)
-    if start<0: raise ValueError("Cannot find JSON object")
-    # JSONDecoder.raw_decode can parse directly from JSON start and stop after its balanced end.
-    doc,n=json.JSONDecoder().raw_decode(page[start:])
+    match=re.search(r"const docs_json = document.getElementById\\('([^']+)'\\).textContent",page)
+    if not match: raise ValueError("Bokeh JSON script ID not located")
+    docid=match.group(1)
+    matchdoc=re.search(r'<script[^>]*id="'+re.escape(docid)+r'"[^>]*>(.*?)</script>',page,re.S)
+    if not matchdoc:raise ValueError("Embedded script for "+docid+" missing")
+    raw=matchdoc.group(1).strip()
+    doc=json.loads(raw)
+    n=len(raw)
+    report["data_script_id"]=docid
     report["doc_keys"]=list(doc)[:15]
     report["bokeh_head_context"]=page[2500:4200]
     report["bokeh_alg_context"]=page[37500:39700]
@@ -35,7 +38,9 @@ try:
                 raw=base64.b64decode(value["__ndarray__"])
                 return np.frombuffer(raw, dtype=np.dtype(value.get("dtype","float64"))).tolist()
             if value.get("type")=="ndarray" and "array" in value:
-                data=base64.b64decode(value["array"])
+                if isinstance(value["array"],list): return value["array"]
+                packed=value["array"]
+                data=base64.b64decode(packed.get("data","") if isinstance(packed,dict) else packed)
                 dtype=np.dtype(value.get("dtype","float64"))
                 shape=value.get("shape")
                 x=np.frombuffer(data,dtype=dtype)
