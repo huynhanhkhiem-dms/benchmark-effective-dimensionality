@@ -1,0 +1,30 @@
+name: PCARE cross-matrix Q4 rescue audit
+on:
+  push:
+    branches: ['research/rank-transfer-audit-*']
+    paths: ['analysis/pcare_crossmatrix_q4.py', '.github/workflows/pcare_crossmatrix_q4.yml']
+  workflow_dispatch:
+jobs:
+  crossmatrix:
+    runs-on: ubuntu-latest
+    permissions: {contents: write}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: |
+          python -m pip install -r analysis/requirements.txt
+          python -m pip install scipy
+      - run: python analysis/pcare_crossmatrix_q4.py
+      - name: Commit study results for reproduction
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add results/pcare_crossmatrix_q4_20261008.json
+          git commit -m "Record four-matrix certificate falsification and regret bounds" || exit 0
+          git push
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: q4-crossmatrix-results
+          path: results/pcare_crossmatrix_q4_20261008.json
