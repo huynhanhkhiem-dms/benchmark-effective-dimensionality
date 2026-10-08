@@ -10,32 +10,32 @@
   "results": {
     "random": {
       "6": {
-        "conditional_bound_median": 0.4593734791666667,
-        "unconditional_bound_median": 0.9166666666666666,
+        "conditional_bound_median": 0.4433803819444444,
+        "unconditional_bound_median": 0.9163955694444443,
         "regret_mean": 0.005964596209490736,
         "conditional_cert_rate_if_assumed": 0.0,
         "verified_assumption_and_cert_rate": 0.0,
         "false_cert_rate_if_assumption_ignored": 0.0
       },
       "12": {
-        "conditional_bound_median": 0.34527715277777776,
-        "unconditional_bound_median": 0.8333333333333334,
+        "conditional_bound_median": 0.3369546666666665,
+        "unconditional_bound_median": 0.8327859791666666,
         "regret_mean": 0.0035790950520833303,
         "conditional_cert_rate_if_assumed": 0.0,
         "verified_assumption_and_cert_rate": 0.0,
         "false_cert_rate_if_assumption_ignored": 0.0
       },
       "24": {
-        "conditional_bound_median": 0.22849870833333333,
-        "unconditional_bound_median": 0.6666666666666666,
+        "conditional_bound_median": 0.2190308680555556,
+        "unconditional_bound_median": 0.6654645902777778,
         "regret_mean": 0.0029589505208333297,
         "conditional_cert_rate_if_assumed": 0.0,
         "verified_assumption_and_cert_rate": 0.0,
         "false_cert_rate_if_assumption_ignored": 0.0
       },
       "36": {
-        "conditional_bound_median": 0.15592699999999998,
-        "unconditional_bound_median": 0.5,
+        "conditional_bound_median": 0.1462253194444445,
+        "unconditional_bound_median": 0.4987073263888889,
         "regret_mean": 0.0018576673900462953,
         "conditional_cert_rate_if_assumed": 0.0,
         "verified_assumption_and_cert_rate": 0.0,
@@ -44,32 +44,32 @@
     },
     "minimax": {
       "6": {
-        "conditional_bound_median": 0.4294916388888889,
-        "unconditional_bound_median": 0.9166666666666666,
+        "conditional_bound_median": 0.42701835416666667,
+        "unconditional_bound_median": 0.9160862083333333,
         "regret_mean": 0.006763239149305534,
         "conditional_cert_rate_if_assumed": 0.0,
         "verified_assumption_and_cert_rate": 0.0,
         "false_cert_rate_if_assumption_ignored": 0.0
       },
       "12": {
-        "conditional_bound_median": 0.35076333333333337,
-        "unconditional_bound_median": 0.8333333333333334,
+        "conditional_bound_median": 0.3476290555555556,
+        "unconditional_bound_median": 0.8328774791666667,
         "regret_mean": 0.008564557146990706,
         "conditional_cert_rate_if_assumed": 0.0,
         "verified_assumption_and_cert_rate": 0.0,
         "false_cert_rate_if_assumption_ignored": 0.0
       },
       "24": {
-        "conditional_bound_median": 0.21933291666666657,
-        "unconditional_bound_median": 0.6666666666666666,
+        "conditional_bound_median": 0.21399127777777777,
+        "unconditional_bound_median": 0.6653264027777777,
         "regret_mean": 0.0044813706597221946,
         "conditional_cert_rate_if_assumed": 0.0,
         "verified_assumption_and_cert_rate": 0.0,
         "false_cert_rate_if_assumption_ignored": 0.0
       },
       "36": {
-        "conditional_bound_median": 0.12995819444444445,
-        "unconditional_bound_median": 0.5,
+        "conditional_bound_median": 0.1245743333333333,
+        "unconditional_bound_median": 0.4987039930555555,
         "regret_mean": 0.0036630367476851618,
         "conditional_cert_rate_if_assumed": 0.0,
         "verified_assumption_and_cert_rate": 0.0,
@@ -78,32 +78,32 @@
     },
     "mean_cover": {
       "6": {
-        "conditional_bound_median": 0.3477629513888889,
-        "unconditional_bound_median": 0.9166666666666666,
+        "conditional_bound_median": 0.3459134791666667,
+        "unconditional_bound_median": 0.916573875,
         "regret_mean": 0.006819913194444433,
         "conditional_cert_rate_if_assumed": 0.0,
         "verified_assumption_and_cert_rate": 0.0,
         "false_cert_rate_if_assumption_ignored": 0.0
       },
       "12": {
-        "conditional_bound_median": 0.2710175277777778,
-        "unconditional_bound_median": 0.8333333333333334,
+        "conditional_bound_median": 0.2671005416666667,
+        "unconditional_bound_median": 0.8331424999999999,
         "regret_mean": 0.005218697337962948,
         "conditional_cert_rate_if_assumed": 0.0,
         "verified_assumption_and_cert_rate": 0.0,
         "false_cert_rate_if_assumption_ignored": 0.0
       },
       "24": {
-        "conditional_bound_median": 0.18636431944444443,
-        "unconditional_bound_median": 0.6666666666666666,
+        "conditional_bound_median": 0.1816279027777777,
+        "unconditional_bound_median": 0.6660977361111111,
         "regret_mean": 0.005903424334490716,
         "conditional_cert_rate_if_assumed": 0.0,
         "verified_assumption_and_cert_rate": 0.0,
         "false_cert_rate_if_assumption_ignored": 0.0
       },
       "36": {
-        "conditional_bound_median": 0.11788479166666668,
-        "unconditional_bound_median": 0.5,
+        "conditional_bound_median": 0.11492835416666668,
+        "unconditional_bound_median": 0.49841772222222225,
         "regret_mean": 0.004287538339120344,
         "conditional_cert_rate_if_assumed": 0.0,
         "verified_assumption_and_cert_rate": 0.0,
