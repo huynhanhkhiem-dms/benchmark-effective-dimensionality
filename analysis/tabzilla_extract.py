@@ -15,7 +15,8 @@ try:
     report["page_size"]=len(page)
     report["head_excerpt"]=page[:250]
     report["term_positions"]={p:page.find(p) for p in ["const docs_json =","'ColumnDataSource'","\"ColumnDataSource\"","alg_name","Accuracy__test_mean","Bokeh.embed.embed_items"]}
-    match=re.search(r"const docs_json = document.getElementById\\('([^']+)'\\).textContent",page)
+    a=page.find("const docs_json = document.getElementById")
+    match=re.search("\x27(p[0-9]+)\x27",page[a:a+180]) if a >= 0 else None
     if not match: raise ValueError("Bokeh JSON script ID not located")
     docid=match.group(1)
     matchdoc=re.search(r'<script[^>]*id="'+re.escape(docid)+r'"[^>]*>(.*?)</script>',page,re.S)
