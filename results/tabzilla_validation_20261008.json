@@ -1,0 +1,802 @@
+{
+  "data_source": "Published TabZilla browser scores (2023 NeurIPS study)",
+  "data_url": "https://github.com/naszilla/tabzilla/blob/main/results_viz/tabzilla-browser.html",
+  "data_matrix_shape": [
+    104,
+    18
+  ],
+  "score_type": "published average test accuracy, task-wise raw score",
+  "select_on": "source algorithm subset, no target scores used",
+  "partitions": 120,
+  "oriented_trials": 240,
+  "random_subsets_per_trial": 12,
+  "source_algorithm_split": "random disjoint 50/50 without family-level blocking",
+  "methods": {
+    "greedy": "source task-correlation coverage",
+    "farthest_first": "source correlation farthest-first task diversity",
+    "source_split_minimax": "provisional source-half worst-case coverage heuristic; NO novelty claimed",
+    "random": "random task selection",
+    "target_aware_greedy": "target-informed geometry comparator, not ranking oracle"
+  },
+  "outcomes": {
+    "6": {
+      "greedy": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.83333,
+          "q025_descriptive": 0.38167,
+          "q975_descriptive": 0.98333,
+          "mean": 0.78819
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.8,
+          "q025_descriptive": 0.28274,
+          "q975_descriptive": 0.96667,
+          "mean": 0.76371
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.47083
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.05926,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 3.53347,
+          "mean": 0.61948
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.54167
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.63333
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.69167
+        }
+      },
+      "farthest_first": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.5,
+          "q025_descriptive": -0.38458,
+          "q975_descriptive": 0.93333,
+          "mean": 0.44174
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.63599,
+          "q025_descriptive": 0.04038,
+          "q975_descriptive": 0.93343,
+          "mean": 0.59896
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.2875
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 1.27141,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 6.44617,
+          "mean": 1.80365
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.29167
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.33333
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.38333
+        }
+      },
+      "source_split_minimax": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.76667,
+          "q025_descriptive": 0.04958,
+          "q975_descriptive": 0.96667,
+          "mean": 0.68229
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.78333,
+          "q025_descriptive": 0.22687,
+          "q975_descriptive": 0.96667,
+          "mean": 0.74012
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.4375
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.28881,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 5.11687,
+          "mean": 0.94218
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.46667
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.55833
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.65833
+        }
+      },
+      "target_aware_greedy": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.86667,
+          "q025_descriptive": 0.58333,
+          "q975_descriptive": 0.98333,
+          "mean": 0.84083
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.87867,
+          "q025_descriptive": 0.63292,
+          "q975_descriptive": 0.97909,
+          "mean": 0.85354
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.65417
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 2.04251,
+          "mean": 0.29501
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.75
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.80833
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.875
+        }
+      },
+      "random": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.72778,
+          "q025_descriptive": 0.51792,
+          "q975_descriptive": 0.85972,
+          "mean": 0.71496
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.7521,
+          "q025_descriptive": 0.62312,
+          "q975_descriptive": 0.85017,
+          "mean": 0.74825
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 0.5,
+          "q025_descriptive": 0.08125,
+          "q975_descriptive": 0.75,
+          "mean": 0.44583
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.76018,
+          "q025_descriptive": 0.25103,
+          "q975_descriptive": 1.69178,
+          "mean": 0.8171
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 0.5,
+          "q025_descriptive": 0.16667,
+          "q975_descriptive": 0.75208,
+          "mean": 0.49271
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 0.58333,
+          "q025_descriptive": 0.16667,
+          "q975_descriptive": 0.83333,
+          "mean": 0.57604
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 0.66667,
+          "q025_descriptive": 0.33333,
+          "q975_descriptive": 1.0,
+          "mean": 0.66215
+        }
+      }
+    },
+    "12": {
+      "greedy": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.88333,
+          "q025_descriptive": 0.61667,
+          "q975_descriptive": 0.98333,
+          "mean": 0.86021
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.87867,
+          "q025_descriptive": 0.57091,
+          "q975_descriptive": 0.98333,
+          "mean": 0.8508
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.59583
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.59635,
+          "mean": 0.31868
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.65833
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.78333
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.84167
+        }
+      },
+      "farthest_first": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.65,
+          "q025_descriptive": -0.16667,
+          "q975_descriptive": 0.96667,
+          "mean": 0.56604
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.8,
+          "q025_descriptive": 0.36779,
+          "q975_descriptive": 0.96667,
+          "mean": 0.75595
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.35417
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 1.0853,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 6.17317,
+          "mean": 1.41717
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.3625
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.38333
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.4625
+        }
+      },
+      "source_split_minimax": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.81667,
+          "q025_descriptive": 0.19833,
+          "q975_descriptive": 0.98333,
+          "mean": 0.7484
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.85,
+          "q025_descriptive": 0.5,
+          "q975_descriptive": 0.98333,
+          "mean": 0.81663
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.52083
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 4.57067,
+          "mean": 0.72855
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.55833
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.62083
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.69583
+        }
+      },
+      "target_aware_greedy": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.9,
+          "q025_descriptive": 0.59958,
+          "q975_descriptive": 0.98333,
+          "mean": 0.87069
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.9,
+          "q025_descriptive": 0.69429,
+          "q975_descriptive": 0.98333,
+          "mean": 0.88814
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.69583
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.90364,
+          "mean": 0.22431
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.7875
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.84167
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.89583
+        }
+      },
+      "random": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.825,
+          "q025_descriptive": 0.66247,
+          "q975_descriptive": 0.91528,
+          "mean": 0.81769
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.85136,
+          "q025_descriptive": 0.75102,
+          "q975_descriptive": 0.92124,
+          "mean": 0.8469
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 0.58333,
+          "q025_descriptive": 0.08333,
+          "q975_descriptive": 0.91667,
+          "mean": 0.56215
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.45462,
+          "q025_descriptive": 0.0724,
+          "q975_descriptive": 0.98863,
+          "mean": 0.48035
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 0.58333,
+          "q025_descriptive": 0.33125,
+          "q975_descriptive": 0.91667,
+          "mean": 0.61875
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 0.75,
+          "q025_descriptive": 0.41458,
+          "q975_descriptive": 1.0,
+          "mean": 0.70208
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 0.83333,
+          "q025_descriptive": 0.41667,
+          "q975_descriptive": 1.0,
+          "mean": 0.78715
+        }
+      }
+    },
+    "24": {
+      "greedy": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.9,
+          "q025_descriptive": 0.48333,
+          "q975_descriptive": 1.0,
+          "mean": 0.86028
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.91667,
+          "q025_descriptive": 0.71619,
+          "q975_descriptive": 0.98333,
+          "mean": 0.90129
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.67917
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.90364,
+          "mean": 0.28371
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.72917
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.7875
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.8875
+        }
+      },
+      "farthest_first": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.8,
+          "q025_descriptive": 0.34958,
+          "q975_descriptive": 0.98333,
+          "mean": 0.75674
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.88333,
+          "q025_descriptive": 0.65266,
+          "q975_descriptive": 0.98333,
+          "mean": 0.86229
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 0.5,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.5
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.02963,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 2.40957,
+          "mean": 0.72186
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.50833
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.525
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.65833
+        }
+      },
+      "source_split_minimax": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.86667,
+          "q025_descriptive": 0.38292,
+          "q975_descriptive": 1.0,
+          "mean": 0.82312
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.9,
+          "q025_descriptive": 0.66667,
+          "q975_descriptive": 0.98365,
+          "mean": 0.8793
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.63333
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 2.22035,
+          "mean": 0.41847
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.675
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.72083
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.8
+        }
+      },
+      "target_aware_greedy": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.9,
+          "q025_descriptive": 0.66667,
+          "q975_descriptive": 0.98333,
+          "mean": 0.88146
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.91667,
+          "q025_descriptive": 0.73333,
+          "q975_descriptive": 1.0,
+          "mean": 0.90892
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.75
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.53359,
+          "mean": 0.17093
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.825
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.8625
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 1.0,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 1.0,
+          "mean": 0.93333
+        }
+      },
+      "random": {
+        "rho_mean": {
+          "n": 240,
+          "median": 0.89167,
+          "q025_descriptive": 0.7958,
+          "q975_descriptive": 0.96111,
+          "mean": 0.89159
+        },
+        "rho_borda": {
+          "n": 240,
+          "median": 0.91385,
+          "q025_descriptive": 0.83801,
+          "q975_descriptive": 0.96253,
+          "mean": 0.90818
+        },
+        "top1_same": {
+          "n": 240,
+          "median": 0.75,
+          "q025_descriptive": 0.16667,
+          "q975_descriptive": 1.0,
+          "mean": 0.70937
+        },
+        "winner_regret_x100": {
+          "n": 240,
+          "median": 0.21681,
+          "q025_descriptive": 0.0,
+          "q975_descriptive": 0.56009,
+          "mean": 0.2265
+        },
+        "epsilon_optimal_0_1_x100": {
+          "n": 240,
+          "median": 0.75,
+          "q025_descriptive": 0.41667,
+          "q975_descriptive": 1.0,
+          "mean": 0.76875
+        },
+        "epsilon_optimal_0_5_x100": {
+          "n": 240,
+          "median": 0.83333,
+          "q025_descriptive": 0.41667,
+          "q975_descriptive": 1.0,
+          "mean": 0.83715
+        },
+        "epsilon_optimal_1_0_x100": {
+          "n": 240,
+          "median": 0.91667,
+          "q025_descriptive": 0.66667,
+          "q975_descriptive": 1.0,
+          "mean": 0.90035
+        }
+      }
+    }
+  },
+  "limitations": [
+    "The TabZilla source may share dataset identifiers with CC18; not independently sampled tasks.",
+    "Available complete-case tasks/configurations selected solely by score missingness.",
+    "Different algorithm families represented; random halves do not guarantee family-disjoint validation.",
+    "Results dependent across repeated partitions of fixed finite matrix; no inferential population confidence intervals.",
+    "Candidate minimax heuristic tested post hoc and not claimed as a novel method.",
+    "No source-to-target generalization to future algorithms, model fits or deployment outcomes."
+  ]
+}
