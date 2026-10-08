@@ -22,6 +22,9 @@ try:
     # JSONDecoder.raw_decode can parse directly from JSON start and stop after its balanced end.
     doc,n=json.JSONDecoder().raw_decode(page[start:])
     report["doc_keys"]=list(doc)[:15]
+    report["bokeh_head_context"]=page[2500:4200]
+    report["bokeh_alg_context"]=page[37500:39700]
+    report["bokeh_tail_context"]=page[5381500:5382900]
     report["doc_type"]=type(doc).__name__
     report["doc_json_chars"]=n
     candidates=[]
