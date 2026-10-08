@@ -1,35 +1,44 @@
-# Benchmark Effective Dimensionality Under Algorithm-Portfolio Variation
+# Benchmark Effective Dimensionality and Disjoint Algorithm Portfolios
 
-Reproducibility materials for the manuscript **“Benchmark Effective Dimensionality Under Algorithm-Portfolio Variation”** by Huynh Anh Khiem (ORCID: 0009-0007-7210-174X).
+Public research data and reproducibility materials for Huynh Anh Khiem (ORCID: 0009-0007-7210-174X), Faculty of Information Technology, Ton Duc Thang University.
 
-This repository contains public, analysis-ready materials used to verify the paper’s main effective-dimensionality and algorithm-portfolio results. The original UCI and OpenML source datasets are public and are not redistributed here.
+The revised manuscript is titled **Disjoint Algorithm Portfolios and the Reliability of Benchmark Geometry: Evidence from Representative-Task Selection**. Its primary new results concern disjoint algorithm portfolios, task-neighbor retention, and representative-task subset transfer. The original participation-ratio estimator is **not** claimed as a novel invention.
 
-## Contents
+## Run the verification
 
-- `analysis/reproduce_results.py` — decodes the public analysis-ready matrices and checks the main reported diagnostics.
-- `analysis/requirements.txt` — minimal Python dependencies.
-- `data/encoded/` — compact analysis-ready primary score matrices.
-- `data/openml_cc18_portfolio_k84.csv` — frozen K=84 configuration portfolio.
-- `data/openml_cc18_family_map.csv` — mapping from configurations to algorithm families.
-- `data/openml_cc18_portfolio_stability.csv` — saved finite-portfolio stability results.
-- `data/openml_cc18_split_half_reliability.csv` — saved split-half reliability results.
-- `data/uci_classification_linked_pairs.csv` and `data/uci_classification_provenance_clusters.csv` — provenance-audit inputs.
-- `protocol/FROZEN_PROTOCOL_CC18_K84.json` — frozen CC18 K=84 protocol.
-- `verified_reported_results.json` — exact machine-readable results from the full saved-output rerun used to verify the manuscript.
-
-## Reproduce the public checks
+Prerequisites: Python 3.11, numpy 2.3.5, pandas 2.2.3. From the repository root:
 
 ```bash
 python -m pip install -r analysis/requirements.txt
 python analysis/reproduce_results.py
+python analysis/reproduce_submission.py --repo . --reference results/reference_20261008.json --output recomputed_submission_results.json
 ```
 
-The script writes `public_reproduction_check.json`. It independently recomputes the primary participation-ratio estimates and the main CC18 portfolio diagnostics from the public analysis-ready matrices, then compares them with the exact values retained in `verified_reported_results.json`.
+The latter script:
+- decodes the **actual CC18 analysis-ready balanced-accuracy matrix (72 tasks x 84 configurations)**, stored in `data/encoded/` as compressed base64 with 1e-6 score quantization;
+- evaluates all 462 distinct balanced six-family versus six-family splits;
+- samples 300 deterministic disjoint within-family configuration splits (3 versus 3 configurations, seventh left out);
+- measures geometry correlations, participation-ratio differences, and five-nearest-task overlap;
+- tests greedy 12-task source-to-target correlation-based coverage relative to target-aware greedy and random subsets;
+- compares primary reported statistics against `results/reference_20261008.json` within 0.002 numerical tolerance; exits with a nonzero error code for mismatched headline results.
 
-The CC18 balanced-accuracy matrix is quantized to 1e-6 for compact public storage. This changes the participation-ratio estimate only below the reporting precision used in the manuscript. Exact manuscript values from the full saved-output rerun are preserved in `verified_reported_results.json`.
+The original baseline verification script and data are preserved. `analysis/reproduce_submission.py` is an additional analysis, not a replacement for the baseline script. A GitHub Actions workflow also runs both checks automatically on the public repository.
 
-## Scope of the public package
+## Interpretation and limitations
 
-The public package is intended to make the analysis layer inspectable without redistributing the raw UCI/OpenML datasets or the much larger intermediate fold-level cache. It includes enough material to verify the paper’s main effective-dimensionality result, the K=36 versus K=84 change, the portfolio-sufficiency criterion (K*=48 at tau=0.90 and q=0.10), family-centroid robustness, leave-one-family-out robustness, and split-half reliability.
+The analyses reuse the same 72 tasks and the same existing set of 84 configurations, without retraining. They do **not** evaluate entirely new algorithm families, new benchmark suites, actual ranking preservation, causal effects, or deployment outcomes. The distributions from overlapping or complementary partitions are **dependent**, so their percentile intervals are descriptive ranges, not confidence intervals for a superpopulation.
 
-The exact saved-output summaries for permutation references, metric sensitivity, held-out subspace reconstruction, cap sensitivity, and the provenance-response audit are also retained in `verified_reported_results.json`.
+A portfolio nested in the reference has shared measurements with that reference; correlation to it is not an independent transfer validation. We report separate comparisons with disjoint partitions for this reason. The target-aware greedy task subset is an in-sample comparator, **not** a globally optimal oracle. Random-baseline values depend on the explicitly documented deterministic seed schedule.
+
+The original raw UCI/OpenML data and full model-training cache are not redistributed; this repository provides the analysis-ready score matrices. The original results beyond the public analysis layer remain recorded in `verified_reported_results.json`. Reproducibility of the analysis **does not** imply end-to-end reproduction of every model-training experiment.
+
+## Main paths
+
+- `analysis/reproduce_results.py` : prior spectral and portfolio summary checks
+- `analysis/reproduce_submission.py` : disjoint geometry, task-neighbor and task-subset transfer analyses
+- `results/reference_20261008.json` : published numerical headline checks
+- `protocol/FROZEN_PROTOCOL_CC18_K84.json` : originally frozen CC18 K=84 design
+- `data/encoded/` : analysis-ready score matrices
+- `data/openml_cc18_portfolio_k84.csv` : portfolio mapping
+
+The supplementary ZIP previously distributed for draft preparation has been replaced by these directly accessible public repository materials. Authors must still verify policy compliance, affiliations and submission metadata independently.
