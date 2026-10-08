@@ -1,0 +1,113 @@
+{
+  "data": "Public CC18 72-by-84 score matrix, no retraining",
+  "oriented_trials": 96,
+  "conditional_assumption": "Every target column is 1-Lipschitz under source maximum-score difference pseudometric",
+  "assumption_valid_fraction": 0.0,
+  "max_assumption_excess": 0.728213,
+  "median_assumption_excess": 0.6033315,
+  "results": {
+    "random": {
+      "6": {
+        "conditional_bound_median": 0.4593734791666667,
+        "unconditional_bound_median": 0.9166666666666666,
+        "regret_mean": 0.005964596209490736,
+        "conditional_cert_rate_if_assumed": 0.0,
+        "verified_assumption_and_cert_rate": 0.0,
+        "false_cert_rate_if_assumption_ignored": 0.0
+      },
+      "12": {
+        "conditional_bound_median": 0.34527715277777776,
+        "unconditional_bound_median": 0.8333333333333334,
+        "regret_mean": 0.0035790950520833303,
+        "conditional_cert_rate_if_assumed": 0.0,
+        "verified_assumption_and_cert_rate": 0.0,
+        "false_cert_rate_if_assumption_ignored": 0.0
+      },
+      "24": {
+        "conditional_bound_median": 0.22849870833333333,
+        "unconditional_bound_median": 0.6666666666666666,
+        "regret_mean": 0.0029589505208333297,
+        "conditional_cert_rate_if_assumed": 0.0,
+        "verified_assumption_and_cert_rate": 0.0,
+        "false_cert_rate_if_assumption_ignored": 0.0
+      },
+      "36": {
+        "conditional_bound_median": 0.15592699999999998,
+        "unconditional_bound_median": 0.5,
+        "regret_mean": 0.0018576673900462953,
+        "conditional_cert_rate_if_assumed": 0.0,
+        "verified_assumption_and_cert_rate": 0.0,
+        "false_cert_rate_if_assumption_ignored": 0.0
+      }
+    },
+    "minimax": {
+      "6": {
+        "conditional_bound_median": 0.4294916388888889,
+        "unconditional_bound_median": 0.9166666666666666,
+        "regret_mean": 0.006763239149305534,
+        "conditional_cert_rate_if_assumed": 0.0,
+        "verified_assumption_and_cert_rate": 0.0,
+        "false_cert_rate_if_assumption_ignored": 0.0
+      },
+      "12": {
+        "conditional_bound_median": 0.35076333333333337,
+        "unconditional_bound_median": 0.8333333333333334,
+        "regret_mean": 0.008564557146990706,
+        "conditional_cert_rate_if_assumed": 0.0,
+        "verified_assumption_and_cert_rate": 0.0,
+        "false_cert_rate_if_assumption_ignored": 0.0
+      },
+      "24": {
+        "conditional_bound_median": 0.21933291666666657,
+        "unconditional_bound_median": 0.6666666666666666,
+        "regret_mean": 0.0044813706597221946,
+        "conditional_cert_rate_if_assumed": 0.0,
+        "verified_assumption_and_cert_rate": 0.0,
+        "false_cert_rate_if_assumption_ignored": 0.0
+      },
+      "36": {
+        "conditional_bound_median": 0.12995819444444445,
+        "unconditional_bound_median": 0.5,
+        "regret_mean": 0.0036630367476851618,
+        "conditional_cert_rate_if_assumed": 0.0,
+        "verified_assumption_and_cert_rate": 0.0,
+        "false_cert_rate_if_assumption_ignored": 0.0
+      }
+    },
+    "mean_cover": {
+      "6": {
+        "conditional_bound_median": 0.3477629513888889,
+        "unconditional_bound_median": 0.9166666666666666,
+        "regret_mean": 0.006819913194444433,
+        "conditional_cert_rate_if_assumed": 0.0,
+        "verified_assumption_and_cert_rate": 0.0,
+        "false_cert_rate_if_assumption_ignored": 0.0
+      },
+      "12": {
+        "conditional_bound_median": 0.2710175277777778,
+        "unconditional_bound_median": 0.8333333333333334,
+        "regret_mean": 0.005218697337962948,
+        "conditional_cert_rate_if_assumed": 0.0,
+        "verified_assumption_and_cert_rate": 0.0,
+        "false_cert_rate_if_assumption_ignored": 0.0
+      },
+      "24": {
+        "conditional_bound_median": 0.18636431944444443,
+        "unconditional_bound_median": 0.6666666666666666,
+        "regret_mean": 0.005903424334490716,
+        "conditional_cert_rate_if_assumed": 0.0,
+        "verified_assumption_and_cert_rate": 0.0,
+        "false_cert_rate_if_assumption_ignored": 0.0
+      },
+      "36": {
+        "conditional_bound_median": 0.11788479166666668,
+        "unconditional_bound_median": 0.5,
+        "regret_mean": 0.004287538339120344,
+        "conditional_cert_rate_if_assumed": 0.0,
+        "verified_assumption_and_cert_rate": 0.0,
+        "false_cert_rate_if_assumption_ignored": 0.0
+      }
+    }
+  },
+  "novelty_status": "Classical conditional extension; not a new theorem"
+}
