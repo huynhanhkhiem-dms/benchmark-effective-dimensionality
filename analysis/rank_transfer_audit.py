@@ -85,12 +85,16 @@ class Destination:
         mean = self.x[subset, :].mean(axis=0)
         borda = self.per_task_rank[subset, :].mean(axis=0)
         selected_winner = int(np.argmax(mean))
+        regret = 100*float(
+            self.full_score[self.winner]-self.full_score[selected_winner])
         return {
             "rho_mean": spearman_vectors(mean, self.full_score),
             "rho_borda": spearman_vectors(borda, self.full_borda),
             "top1_same": float(selected_winner == self.winner),
-            "winner_regret_pp": 100*float(
-                self.full_score[self.winner]-self.full_score[selected_winner])
+            "winner_regret_x100": regret,
+            "epsilon_optimal_0_1_x100": float(regret <= 0.1+1e-12),
+            "epsilon_optimal_0_5_x100": float(regret <= 0.5+1e-12),
+            "epsilon_optimal_1_0_x100": float(regret <= 1.0+1e-12)
         }
 
 
@@ -179,13 +183,13 @@ def audit(x, partitions, design):
     for k in KS:
         group = f"k{k}"
         obj = {}
-        for key in ("rho_mean","rho_borda","top1_same","winner_regret_pp"):
+        for key in ("rho_mean","rho_borda","top1_same","winner_regret_x100","epsilon_optimal_0_1_x100","epsilon_optimal_0_5_x100","epsilon_optimal_1_0_x100"):
             obj[key] = {
                 kind: summarize(accumulator[(group,key,kind)])
                 for kind in ("source","random","target_aware","source_minus_random",
                              "source_minus_oracle")}
             diff = np.asarray(accumulator[(group,key,"source_minus_random")])
-            if key in ("rho_mean", "rho_borda", "top1_same"):
+            if key in ("rho_mean", "rho_borda", "top1_same", "epsilon_optimal_0_1_x100", "epsilon_optimal_0_5_x100", "epsilon_optimal_1_0_x100"):
                 obj[key]["fraction_source_worse_than_random_mean"] = round(
                     float(np.mean(diff < 0)),5)
             else:
@@ -221,6 +225,8 @@ def main():
             "Target-aware comparator has access to target geometry; it is NOT an optimized oracle for ranking preservation.",
             "UCI splits do not preserve family structure: not a replication of CC18 family-disjoint design.",
             "UCI regression results use previously clipped R-squared scores, not balanced accuracy.",
+            "Winner regret is 100 times the raw score gap, i.e. percentage points ONLY for balanced accuracy, not for clipped R-squared.",
+            "Epsilon-optimal means selected winner has full-target score regret <=0.001, 0.005 or 0.01 in native score units; not a statistical equivalence test.",
             "No evaluation on unseen families, external trials or unseen data.",
             "Not directly comparable to selection benchmarks based on different score-normalization conventions.",
             "Existing analysis-ready data are used; model-training caches were not rerun."
@@ -240,8 +246,8 @@ def main():
                   f"{m['top1_same']['source']['mean']}/"
                   f"{m['top1_same']['random']['mean']}; "
                   f"regret pp(source/random) "
-                  f"{m['winner_regret_pp']['source']['mean']}/"
-                  f"{m['winner_regret_pp']['random']['mean']}")
+                  f"{m['winner_regret_x100']['source']['mean']}/"
+                  f"{m['winner_regret_x100']['random']['mean']}")
     print("SAVED:", output)
 
 
